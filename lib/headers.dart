@@ -3,3 +3,7 @@ export 'my_app.dart';
 export 'package:contacts_app/controller/controller.dart';
 export 'package:contacts_app/modals/counter.dart';
 export 'package:provider/provider.dart';
+export 'package:shared_preferences/shared_preferences.dart';
+export 'package:contacts_app/pages/home_page/home_page.dart';
+export 'package:contacts_app/pages/splash_screen/splash_screen.dart';
+export 'package:contacts_app/pages/login_page/login_page.dart';

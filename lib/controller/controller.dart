@@ -1,18 +1,26 @@
 import 'package:contacts_app/headers.dart';
 
 class Controller extends ChangeNotifier {
-  void increment() {
+  Controller({required int count, required this.preferences}) {
+    Counter.instance.count = count;
+  }
+  late SharedPreferences preferences;
+
+  Future<void> increment() async {
     Counter.instance.count++;
+    await preferences.setInt('count', Counter.instance.count);
     notifyListeners();
   }
 
-  void decrement() {
+  Future<void> decrement() async {
     Counter.instance.count--;
+    await preferences.setInt('count', Counter.instance.count);
     notifyListeners();
   }
 
-  void reset() {
+  Future<void> reset() async {
     Counter.instance.count = 0;
+    await preferences.setInt('count', Counter.instance.count);
     notifyListeners();
   }
 
